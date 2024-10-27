@@ -11,6 +11,7 @@ export default {
       },
       colors: {
         cl1: "#F8F8F8",
+        cl2Orange: "#D6891F",
       },
       boxShadow: {
         shx1: "rgba(0, 0, 0, 0.15) 0px 2px 8px;",
