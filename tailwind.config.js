@@ -9,6 +9,10 @@ export default {
       maxWidth: {
         max: "1290px", // max-width: 1290px
       },
+      fontFamily: {
+        playfair: "Playfair Display",
+        montserrat: "Montserrat",
+      },
       colors: {
         cl1: "#F8F8F8",
         cl2Orange: "#D6891F",

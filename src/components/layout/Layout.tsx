@@ -28,7 +28,6 @@ const Layout = ({}: Props) => {
       <div>
         <CategoryContextProvider>
           <HeadBottomCategories />
-          <CategoryModal />
         </CategoryContextProvider>
       </div>
       <Outlet />

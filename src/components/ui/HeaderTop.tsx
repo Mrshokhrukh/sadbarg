@@ -16,16 +16,24 @@ const HeaderTop = ({}: Props) => {
               <MdKeyboardArrowDown />
             </span>
           </a>
-          <a href="" className="text-gray-700">
+          <a href="" className="text-gray-700  hover:text-cl2Orange duration-200 transition">
             Доставка и оплата
           </a>
         </div>
 
         <div className="flex gap-6 text-gray-700">
-          <a href="">О нас</a>
-          <a href="">Отзывы</a>
-          <a href="">FAQ</a>
-          <a href="">Контакты</a>
+          <a href="" className=" hover:text-cl2Orange duration-200 transition">
+            О нас
+          </a>
+          <a href="" className=" hover:text-cl2Orange duration-200 transition">
+            Отзывы
+          </a>
+          <a href="" className=" hover:text-cl2Orange duration-200 transition">
+            FAQ
+          </a>
+          <a href="" className=" hover:text-cl2Orange duration-200 transition">
+            Контакты
+          </a>
         </div>
       </div>
     </div>

@@ -1,27 +1,36 @@
 import React, { useContext } from "react";
 import { CategoryContext } from "../features/context/CategoryContext";
 import { categoryLinks } from "../../db/data";
-import HeadCategoriesModalTable from "./HeadCategoriesModalTable";
+import { Link, NavLink } from "react-router-dom";
 
-type CategoryModalProps = {};
+type CategoryModalProps = {
+  currentCategory: string;
+};
 
-const CategoryModal: React.FC<CategoryModalProps> = ({}) => {
-  const { isLinksModal, setIsLinksModal, setCategoryName, categoryName } =
-    useContext(CategoryContext);
-  if (!isLinksModal) {
+const CategoryModal: React.FC<CategoryModalProps> = ({ currentCategory }) => {
+  const { setCategoryName, categoryName } = useContext(CategoryContext);
+
+  if (currentCategory !== categoryName) {
     return;
   }
   return (
     <div
-      className="shadow-lg rounded-lg p-6 w-[100%] fixed z-[100] bg-white h-[400px]"
-      onMouseEnter={() => setIsLinksModal(true)}
-      onMouseLeave={() => setIsLinksModal(false)}
+      className="shadow-lg rounded-lg p-2 w-[100%] z-[100] bg-white absolute top-[120%]"
+      onMouseEnter={() => setCategoryName(currentCategory)}
+      onMouseLeave={() => setCategoryName("")}
     >
-      <div className="max-w-max mx-auto">
-        {categoryLinks.map((item) => {
-          return <HeadCategoriesModalTable data={""} />;
+      {categoryLinks
+        .find((item) => item.text === categoryName)
+        ?.links?.map((data) => {
+          return (
+            <Link
+              to={""}
+              className="block text-gray-600 text-sm p-1 mt-2 hover:text-cl2Orange border-b border-cl2Orange border-opacity-[0.1] cursor-pointer"
+            >
+              {data.text}
+            </Link>
+          );
         })}
-      </div>
     </div>
   );
 };
