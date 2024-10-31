@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import ProductCardBottom from "./ProductCardBottom";
 
-type ProductProps = {};
+type ProductProps = {
+  data: any;
+};
 
-const Product: React.FC<ProductProps> = () => {
+const Product: React.FC<ProductProps> = ({ data }) => {
   const [isHoverProduct, setIsHoverProduct] = useState(false);
   const handleHoverProduct = () => {
     setIsHoverProduct(true);
@@ -33,7 +35,7 @@ const Product: React.FC<ProductProps> = () => {
           Букет «Нежные объятия»
         </a>
         <p className="text-[#E58484] font-semibold text-xl">3 560 p</p>
-        <ProductCardBottom />
+        <ProductCardBottom id={data}/>
       </div>
     </div>
   );

@@ -22,8 +22,9 @@ const BlogHomeSection: React.FC<BlogHomeSectionProps> = () => {
         <div className="grid grid-cols-3">
           {Array(6)
             .fill("")
-            .map((_) => {
-              return <Product />;
+            .map((_, index) => index + 1)
+            .map((item, i) => {
+              return <Product data={item} key={i} />;
             })}
         </div>
       </div>
