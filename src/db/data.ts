@@ -36,3 +36,27 @@ export const categoryLinks = [
   },
   { text: "Оформление праздников", link: "/decorations" },
 ];
+
+export const items = [
+  {
+    title: "Product 1",
+    price: 29.99,
+    image: "https://funburg.ru/upload/iblock/a97/tdnh7r94ktk9o71ooqxne27t2ddb1z69/Nabor-sharov-1920-806.webp",
+  },
+  {
+    title: "Product 2",
+    price: 49.99,
+    image: "https://funburg.ru/upload/iblock/a97/tdnh7r94ktk9o71ooqxne27t2ddb1z69/Nabor-sharov-1920-806.webp",
+  },
+  {
+    title: "Product 3",
+    price: 19.99,
+    image: "https://funburg.ru/upload/iblock/a97/tdnh7r94ktk9o71ooqxne27t2ddb1z69/Nabor-sharov-1920-806.webp",
+  },
+  {
+    title: "Product 4",
+    price: 39.99,
+    image: "https://funburg.ru/upload/iblock/a97/tdnh7r94ktk9o71ooqxne27t2ddb1z69/Nabor-sharov-1920-806.webp",
+  },
+
+];

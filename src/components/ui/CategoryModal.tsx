@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { CategoryContext } from "../features/context/CategoryContext";
 import { categoryLinks } from "../../db/data";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 type CategoryModalProps = {
   currentCategory: string;

@@ -1,20 +1,45 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { items } from "../../db/data";
+import ProductCardSlide from "./productCardSlide";
 
-type SlideProductsProps = {};
+const SlideProducts: React.FC = () => {
+  let sliderRef = useRef<any>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-import { Swiper, SwiperSlide } from "swiper/react";
+  const settings = {
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: true,
+    // autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    draggable: true,
+    centerMode: true,
+    speed: 500,
+    focusOnSelect: true,
+    arrows: false,
+    beforeChange: (current: number, next: number) => setActiveIndex(next),
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
+  const handlePrevious = () => {
+    sliderRef.current?.slickPrev();
+  };
 
-import "../../styles/main.style.css";
+  const handleNext = () => {
+    sliderRef.current?.slickNext();
+  };
 
-// import required modules
-import { EffectCoverflow, Pagination } from "swiper/modules";
-
-const SlideProducts: React.FC<SlideProductsProps> = () => {
   return (
     <div className="mt-6 flex flex-col items-center gap-6">
       <h1 className="text-[55px] font-playfair">Букеты дня</h1>
@@ -22,80 +47,34 @@ const SlideProducts: React.FC<SlideProductsProps> = () => {
         Букеты и композиции, которые мы сможем оперативно собрать для вас без изменений - как на
         картинке!
       </p>
-      <div className="max-w-max mx-auto mt-8">
-        <Swiper
-          effect={"coverflow"}
-          grabCursor={true}
-          centeredSlides={true}
-          slidesPerView={2.5}
-          coverflowEffect={{
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-          }}
-          pagination={true}
-          modules={[EffectCoverflow, Pagination]}
-          className="mySwiper"
+
+      <div className="relative p-3 w-full max-w-max bg-green-200">
+        <button
+          onClick={handlePrevious}
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-800 p-3 rounded-full shadow-lg z-10 hover:bg-gray-300"
         >
-          <SwiperSlide className="w-[400px] h-[450px]">
-            <img
-              src="https://swiperjs.com/demos/images/nature-1.jpg"
-              className="w-[100%] h-[100%]"
+          ❮
+        </button>
+        <button
+          onClick={handleNext}
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-800 p-3 rounded-full shadow-lg z-10 hover:bg-gray-300"
+        >
+          ❯
+        </button>
+
+        <Slider ref={sliderRef} {...settings} className="flex">
+          {items.map((item, index) => (
+            <ProductCardSlide
+              image={item.image}
+              key={index}
+              index={index}
+              activeIndex={activeIndex}
             />
-          </SwiperSlide>
-          <SwiperSlide className="w-[400px] h-[450px]">
-            <img
-              src="https://swiperjs.com/demos/images/nature-2.jpg"
-              className="w-[100%] h-[100%]"
-            />
-          </SwiperSlide>
-          <SwiperSlide className="w-[400px] h-[450px]">
-            <img
-              src="https://swiperjs.com/demos/images/nature-3.jpg"
-              className="w-[100%] h-[100%]"
-            />
-          </SwiperSlide>
-          <SwiperSlide className="w-[400px] h-[450px]">
-            <img
-              src="https://swiperjs.com/demos/images/nature-4.jpg"
-              className="w-[100%] h-[100%]"
-            />
-          </SwiperSlide>
-          <SwiperSlide className="w-[400px] h-[450px]">
-            <img
-              src="https://swiperjs.com/demos/images/nature-5.jpg"
-              className="w-[100%] h-[100%]"
-            />
-          </SwiperSlide>
-          <SwiperSlide className="w-[400px] h-[450px]">
-            <img
-              src="https://swiperjs.com/demos/images/nature-6.jpg"
-              className="w-[100%] h-[100%]"
-            />
-          </SwiperSlide>
-          <SwiperSlide className="w-[400px] h-[450px]">
-            <img
-              src="https://swiperjs.com/demos/images/nature-7.jpg"
-              className="w-[100%] h-[100%]"
-            />
-          </SwiperSlide>
-          <SwiperSlide className="w-[400px] h-[450px]">
-            <img
-              src="https://swiperjs.com/demos/images/nature-8.jpg"
-              className="w-[100%] h-[100%]"
-            />
-          </SwiperSlide>
-          <SwiperSlide className="w-[400px] h-[450px]">
-            <img
-              src="https://swiperjs.com/demos/images/nature-9.jpg"
-              className="w-[100%] h-[100%]"
-            />
-          </SwiperSlide>
-        </Swiper>
+          ))}
+        </Slider>
       </div>
     </div>
   );
 };
+
 export default SlideProducts;

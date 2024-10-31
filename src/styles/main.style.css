@@ -23,3 +23,9 @@ body {
   height: 10px;
 }
 /* 1px solid #D6891F */
+.swiper-slide {
+  background-color: red;
+}
+.swiper-slide.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-active {
+
+}

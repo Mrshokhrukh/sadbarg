@@ -2,6 +2,7 @@ import React from "react";
 import HomePageSwiper from "../components/ui/HomePageSwiper";
 import SlideProducts from "../components/ui/SlideProducts";
 
+
 type HomePageProps = {};
 
 const HomePage: React.FC<HomePageProps> = () => {
@@ -10,6 +11,7 @@ const HomePage: React.FC<HomePageProps> = () => {
       <div className="">
         <HomePageSwiper />
         <SlideProducts />
+        {/* <ProductCard /> */}
       </div>
     </div>
   );
