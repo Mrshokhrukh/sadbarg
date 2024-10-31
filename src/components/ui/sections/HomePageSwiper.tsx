@@ -5,8 +5,7 @@ import "swiper/css/navigation";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
-import "../../styles/main.style.css";
-import { items } from "../../db/data";
+import { items } from "../../../db/data";
 type HomePageSwiperProps = {};
 
 const HomePageSwiper: React.FC<HomePageSwiperProps> = () => {

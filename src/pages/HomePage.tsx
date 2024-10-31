@@ -1,7 +1,7 @@
 import React from "react";
-import HomePageSwiper from "../components/ui/HomePageSwiper";
-import SlideProducts from "../components/ui/SlideProducts";
-
+import HomePageSwiper from "../components/ui/sections/HomePageSwiper";
+import SlideProducts from "../components/ui/sections/SlideProducts";
+import BlogHomeSection from "../components/ui/sections/BlogHomeSection";
 
 type HomePageProps = {};
 
@@ -11,7 +11,7 @@ const HomePage: React.FC<HomePageProps> = () => {
       <div className="">
         <HomePageSwiper />
         <SlideProducts />
-        {/* <ProductCard /> */}
+        <BlogHomeSection />
       </div>
     </div>
   );

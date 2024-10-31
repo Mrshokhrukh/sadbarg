@@ -2,8 +2,9 @@ import React, { useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { items } from "../../db/data";
-import ProductCardSlide from "./productCardSlide";
+import { items } from "../../../db/data";
+import ProductCardSlide from "../productCardSlide";
+import TitleLikeText from "../TitleLikeText";
 
 const SlideProducts: React.FC = () => {
   let sliderRef = useRef<any>(null);
@@ -27,6 +28,7 @@ const SlideProducts: React.FC = () => {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
+          centerMode: false,
         },
       },
     ],
@@ -42,11 +44,12 @@ const SlideProducts: React.FC = () => {
 
   return (
     <div className="mt-6 flex flex-col items-center gap-6">
-      <h1 className="text-[55px] font-playfair">Букеты дня</h1>
-      <p className="text-cl2Orange text-xl max-w-[480px] text-center">
-        Букеты и композиции, которые мы сможем оперативно собрать для вас без изменений - как на
-        картинке!
-      </p>
+      <TitleLikeText
+        text={"Букеты дня"}
+        subtitle={
+          "Букеты и композиции, которые мы сможем оперативно собрать для вас без изменений - как на картинке!"
+        }
+      />
 
       <div className="relative p-3 w-full max-w-max bg-green-200">
         <button

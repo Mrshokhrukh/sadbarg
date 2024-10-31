@@ -19,6 +19,7 @@ export default {
       },
       boxShadow: {
         shx1: "rgba(0, 0, 0, 0.15) 0px 2px 8px;",
+        card: "rgba(0, 0, 0, 0.15) 0px 2px 8px;",
       },
     },
   },
