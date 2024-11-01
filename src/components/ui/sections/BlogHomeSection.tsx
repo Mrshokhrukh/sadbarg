@@ -11,15 +11,15 @@ const BlogHomeSection: React.FC<BlogHomeSectionProps> = () => {
         text="Сезонные букеты"
         subtitle="Лучшие букеты и композиции из самых свежих сезонных цветов"
       />
-      <div className="mt-10 flex gap-3">
-        <div className="w-[350px] mt-3">
+      <div className="mt-10 lg:flex gap-3">
+        <div className="hidden lg:block w-[350px] mt-3">
           <img
             src="https://funburg.ru/upload/iblock/727/7ii302nd3333p4014z54cqsg0hd3kym3/bokovye-osennie-bukety.png"
             alt=""
             className="w-full "
           />
         </div>
-        <div className="grid grid-cols-3">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 ">
           {Array(6)
             .fill("")
             .map((_, index) => index + 1)

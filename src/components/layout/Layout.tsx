@@ -3,7 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import HeaderTop from "../ui/HeaderTop";
 import HeadBottomCategories from "../ui/HeadBottomCategories";
-import CategoryModal from "../ui/CategoryModal";
+// import CategoryModal from "../ui/CategoryModal";
 import CategoryContextProvider from "../features/context/CategoryContext";
 
 type Props = {};

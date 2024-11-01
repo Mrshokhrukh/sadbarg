@@ -4,7 +4,7 @@ type Props = {};
 
 const HeaderTop = ({}: Props) => {
   return (
-    <div className=" bg-cl1 w-full p-2">
+    <div className="hidden md:block bg-cl1 w-full p-2">
       <div className="max-w-max mx-auto flex justify-between text-sm">
         <div className="flex gap-4">
           <a href="" className="flex items-center gap-2 text-gray-700">

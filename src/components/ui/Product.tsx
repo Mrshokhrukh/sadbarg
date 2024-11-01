@@ -16,11 +16,11 @@ const Product: React.FC<ProductProps> = ({ data }) => {
   return (
     <div
       className={`relative group h-full w-full max-w-[500px] max-h-[750px] hover:bg-white p-3 
-      hover:shadow-card flex flex-col gap-4  rounded-t-md cursor-pointer transition-all duration-200`}
+      sm:hover:shadow-card flex flex-col gap-4  rounded-t-md cursor-pointer transition-all duration-200`}
       onMouseEnter={handleHoverProduct}
       onMouseLeave={handleRemoveHoverProduct}
     >
-      <p className="right-[10%] top-[5%] text-sm uppercase p-2 bg-[rgba(255,245,232,0.7)] bg-opacity-0 absolute text-black">
+      <p className="right-[7%] top-[5%] text-[10px] sm:text-sm uppercase p-1  bg-[rgba(255,245,232,0.7)] bg-opacity-0 absolute text-black">
         Хит продаж
       </p>
       <img
@@ -31,11 +31,20 @@ const Product: React.FC<ProductProps> = ({ data }) => {
         className={`h-full object-cover`}
       />
       <div className="flex flex-col gap-2">
-        <a href="" className="font-semibold">
+        <a href="" className="">
           Букет «Нежные объятия»
         </a>
-        <p className="text-[#E58484] font-semibold text-xl">3 560 p</p>
-        <ProductCardBottom id={data}/>
+        <div className="flex items-center justify-between">
+          <div className="flex gap-2 sm:gap-4 items-center">
+            <p className="text-[#E58484] font-semibold text-lg sm:text-xl">3 560 p</p>
+            {true ? (
+              <p className="text-gray-400 font-light text-sm sm:text-xl line-through">3 560 p</p>
+            ) : (
+              ""
+            )}
+          </div>
+          <ProductCardBottom id={data} />
+        </div>
       </div>
     </div>
   );

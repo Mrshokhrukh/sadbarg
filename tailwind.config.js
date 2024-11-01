@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        custom: { max: "1290px", min: "512px" },
+        custom: { max: "1320px", min: "512px" },
       },
       maxWidth: {
         max: "1290px", // max-width: 1290px

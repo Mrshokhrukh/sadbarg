@@ -19,14 +19,13 @@ const HeadBottomCategories = (props: Props) => {
   };
   return (
     <div>
-      <div className="border-b border-gray-600 border-opacity-[0.3] pb-2">
+      <div className="hidden md:block border-b border-gray-600 border-opacity-[0.3] pb-2">
         <div className="max-w-max mx-auto grid grid-cols-4 text-center gap-2">
           {categoryLinks.map((item, i) => {
             return (
-              <div className="relative">
+              <div className="relative" key={i}>
                 <Link
                   to={`/${item.link}`}
-                  key={i}
                   className="cursor-pointer p-2 pb-3 hover:text-cl2Orange transition-all duration-200"
                   onMouseEnter={handleHover}
                   onMouseLeave={removeHover}

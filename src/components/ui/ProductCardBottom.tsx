@@ -7,7 +7,10 @@ type ProductCardBottomProps = {
 
 const ProductCardBottom: React.FC<ProductCardBottomProps> = ({ id }) => {
   return (
-    <div className="absolute left-0 right-0 px-3 pb-3 group-hover:shadow-[0px_4px_4px_rgba(0,0,0,0.1)] rounded-b-md hidden group-hover:flex w-full bg-white top-[100%] z-10">
+    <div
+      className="sm:absolute sm:left-0 sm:right-0 sm:px-3 sm:pb-3 sm:group-hover:shadow-[0px_4px_4px_rgba(0,0,0,0.1)]
+     rounded-b-md sm:hidden group-hover:flex sm:w-full bg-white sm:top-[100%] z-10"
+    >
       <ButtonProduct text="Заказать" id={id} />
     </div>
   );

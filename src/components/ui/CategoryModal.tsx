@@ -21,10 +21,11 @@ const CategoryModal: React.FC<CategoryModalProps> = ({ currentCategory }) => {
     >
       {categoryLinks
         .find((item) => item.text === categoryName)
-        ?.links?.map((data) => {
+        ?.links?.map((data, i) => {
           return (
             <Link
               to={""}
+              key={i}
               className="block text-gray-600 text-sm p-1 mt-2 hover:text-cl2Orange border-b border-cl2Orange border-opacity-[0.1] cursor-pointer"
             >
               {data.text}
